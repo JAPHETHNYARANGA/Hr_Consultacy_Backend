@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthenticationController::class, 'login']);
 
-Route::post('register',[AuthenticationController::class, 'register']);
+Route::post('register',[AuthenticationController::class, 'register'])->middleware('auth:api');
 
 Route::post('activate',[AuthenticationController::class, 'activate']);
 
@@ -34,7 +34,9 @@ Route::get('logout', [AuthenticationController::class, 'logout'])->middleware('a
 
 Route::get('users',[AuthenticationController::class, 'users'])->middleware('auth:api');
 
-Route::get('deleteUser/{id}', [AuthenticationController::class, 'delete']);
+Route::get('deleteUser/{id}', [AuthenticationController::class, 'delete'])->middleware('auth:api');
+
+Route::get('deleteuser/{id}',[AuthenticationController::class, 'deleteusers'])->middleware('auth:api');
 
 
 //listing

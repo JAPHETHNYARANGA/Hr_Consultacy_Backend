@@ -10,7 +10,7 @@ class listingController extends Controller
 {
     public function addListing(Request $request){
 
-        // if (Auth::check()) {
+        if (Auth::check()) {
             $listing = new listings();
 
             $listing->position = $request->position;
@@ -38,7 +38,7 @@ class listingController extends Controller
                     'message'=>'Listing add failed',
                 ],201);
             }
-        // }
+        }
        
 
         return response(

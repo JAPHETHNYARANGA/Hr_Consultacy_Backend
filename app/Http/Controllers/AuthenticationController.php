@@ -100,6 +100,7 @@ class AuthenticationController extends Controller
 
 
     public function logout(Request $request){
+        
         $token = $request->user()->token();
         $res = $token->revoke();
         if($res){
@@ -125,23 +126,24 @@ class AuthenticationController extends Controller
         
     }
 
-    public function delete($id){
-        $user= User::find($id);
+    public function deleteusers($id){
+        
+        $users = User::find($id);
 
-        $res = $user->delete();
+        $res = $users->delete();
 
-        if($res){
-            return response(
-                [
-                'success' =>true,
-                'message'=>'User deleted successfully',
-            ],200);
-        } else {
-            return response(
-                [
-                'success' =>false,
-                'message'=>'User delete failed',
-            ],201);
-        }
+            if($res){
+                return response(
+                    [
+                    'success' =>true,
+                    'message'=>'User deleted successfully',
+                ],200);
+            } else {
+                return response(
+                    [
+                    'success' =>false,
+                    'message'=>'User delete failed',
+                ],201);
+            }
     }
 }
