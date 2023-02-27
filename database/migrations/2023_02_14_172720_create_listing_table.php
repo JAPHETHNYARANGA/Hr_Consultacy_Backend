@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('Requirements')->nullable();
             $table->string('benefits')->nullable();
             $table->string('tasks')->nullable();
-            $table->string('name')->nullable();
-            $table->string('logo')->nullable();
+            $table->string('company')->nullable();
+            $table->date('applicationDate')->nullable();
             $table->integer('salary')->nullable();            
             $table->timestamps();
         });

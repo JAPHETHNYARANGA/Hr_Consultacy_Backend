@@ -11,6 +11,6 @@ class listings extends Model
 
     protected $table ="listing";
     protected $fillable =[
-        'position','requirements','tasks','benefits','name','logo','salary'
+        'position','requirements','tasks','benefits','company','applicationDate','salary'
     ];
 }

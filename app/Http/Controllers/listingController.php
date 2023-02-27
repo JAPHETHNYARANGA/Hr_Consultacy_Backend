@@ -17,8 +17,8 @@ class listingController extends Controller
             $listing->requirements = $request->requirements;
             $listing->tasks = $request->tasks;
             $listing->benefits = $request->benefits;
-            $listing->name = $request->name;
-            $listing->logo = $request->logo;
+            $listing->company = $request->name;
+            $listing->applicationDate = $request->logo;
             $listing->salary = $request->salary;
     
             $res = $listing ->save();
